@@ -94,7 +94,7 @@ export default {
       }
 
       .confirmbtn {
-        font-size: 2rem !important;
+        font-size: 1.5rem !important;
         width: 5rem !important;
         height: 4rem !important;
         margin: 0 !important;
