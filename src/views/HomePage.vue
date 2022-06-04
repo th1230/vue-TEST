@@ -1,5 +1,5 @@
 <template>
-  <div class="home container">
+  <div class="homePage container">
     <InputComponent />
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
 <style lang="scss" scoped>
 @use "../assets/scss/layout.scss";
 
-.home {
+.homePage {
   box-sizing: border-box;
   border-radius: 0.75rem;
   padding: 1rem 2rem;

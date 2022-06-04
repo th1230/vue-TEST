@@ -1,7 +1,16 @@
-<template></template>
+<template>
+  <div class="listPage container">
+    <ListComponent />
+  </div>
+</template>
 
 <script>
-export default {};
+import ListComponent from "../components/ListComponent.vue";
+export default {
+  components: { ListComponent },
+};
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@use "../assets/scss/layout.scss";
+</style>

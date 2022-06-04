@@ -79,6 +79,8 @@ export default {
     cursor: pointer;
     appearance: none;
     position: relative;
+    color: white;
+    font-weight: 600;
   }
 
   img {

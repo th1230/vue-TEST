@@ -36,7 +36,6 @@ export default {
     };
 
     let mindCallback = (m) => {
-      console.log(123123, m);
       mind.value = m;
     };
 
@@ -49,7 +48,7 @@ export default {
 .showbtn {
   background-color: rgba(255, 255, 255, 0.648);
   border: none;
-
+  margin-top: 1rem;
   width: 5rem;
   border-radius: 5px;
   height: 3rem;

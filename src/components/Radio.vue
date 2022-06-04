@@ -82,6 +82,25 @@ export default {
       width: 1.2rem;
       height: 1.2rem;
     }
+    .radio-btn {
+      width: 1.2rem;
+      height: 1.2rem;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      cursor: pointer;
+      position: absolute;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 0.7rem;
+        height: 0.7rem;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        opacity: 0;
+      }
+    }
   }
 }
 </style>

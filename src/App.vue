@@ -136,6 +136,21 @@ body {
 
   .changeColorBtns {
     display: flex;
+    .btn {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
   }
 }
 </style>

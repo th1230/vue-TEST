@@ -7,6 +7,7 @@ $colorList: (
   ruby: #d81e5b,
 );
 
+// 產生主題背景色
 @each $key, $value in $colorList {
   .#{$key}-theme {
     color: white !important;
@@ -14,51 +15,44 @@ $colorList: (
   }
 }
 
+// 產生不同主題顏色的按鈕樣式
 @each $key, $value in $colorList {
   .#{$key}-theme.btn {
     color: white !important;
-    border-radius: 50%;
     border: 3px solid white;
-    width: 2rem;
-    height: 2rem;
     background-color: $value;
-    margin-right: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &:active {
-      transform: scale(0.9);
-    }
   }
 
   .#{$key}-theme.outlinebtn {
     color: white !important;
     border: 3px solid lighten($value, 15%) !important;
-    padding: 0.75rem 1.5rem !important;
     background-color: darken($value, 10%) !important;
-    margin-right: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.2s;
-    &:hover {
-      transform: scale(1.1);
-    }
+  }
 
-    &:active {
-      transform: scale(0.9);
+  .#{$key}-theme.radio-btn {
+    background-color: darken($value, 30%) !important;
+    &::after {
+      background-color: lighten($value, 30%) !important;
     }
+  }
+  input[type="radio"]:checked + .#{$key}-theme.radio-btn::after {
+    opacity: 1;
+  }
+
+  .#{$key}-theme.normalbtn {
+    background-color: $value;
+    color: darken($value, 20%) !important;
   }
 }
 
+// 產生不同主題顏色的文字樣式
 @each $key, $value in $colorList {
   .#{$key}-theme.text {
     color: lighten($value, 40%) !important;
-    font-weight: 600;
   }
 }
 
+// 產生不同主題顏色的表單類樣式
 @each $key, $value in $colorList {
   input[type="text"].#{$key}-theme {
     background-color: darken($value, 30%) !important;
@@ -67,35 +61,15 @@ $colorList: (
   input[type="text"].#{$key}-theme::placeholder {
     color: lighten($value, 20%) !important;
   }
-}
 
-@each $key, $value in $colorList {
-  .#{$key}-theme.radio-btn {
-    position: absolute;
-    background-color: darken($value, 30%) !important;
-    width: 1.2rem;
-    height: 1.2rem;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    cursor: pointer;
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 0.7rem;
-      height: 0.7rem;
-      background-color: lighten($value, 30%) !important;
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-      opacity: 0;
+  .#{$key}-theme.selectType {
+    select {
+      background-color: mix($value, rgb(169, 169, 169));
     }
   }
-  input[type="radio"]:checked + .#{$key}-theme.radio-btn::after {
-    opacity: 1;
-  }
 }
 
+// 以下為list組件的主題樣式
 @each $key, $value in $colorList {
   .#{$key}-theme.group {
     background-color: lighten($value, 10%) !important;
@@ -112,11 +86,16 @@ $colorList: (
 }
 
 @each $key, $value in $colorList {
-  .#{$key}-theme.selectType {
-    select {
-      background-color: mix($value, rgb(169, 169, 169));
-      color: white;
-      font-weight: 600;
+  .#{$key}-theme.listItem {
+    border: 5px solid darken($value, 30%);
+    transition: all 0.2s;
+    &:hover {
+      transform: perspective(500px) translate3d(0, 0, 50px);
+      box-shadow: 0px 7px 16px 2px rgba(mix($value, rgb(69, 69, 69)), 0.8);
+    }
+
+    .dataGroup {
+      border: 5px solid lighten($value, 10%);
     }
   }
 }

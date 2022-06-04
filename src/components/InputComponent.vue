@@ -103,11 +103,22 @@ export default {
   .inputTypes {
     list-style-type: none;
     display: flex;
-    .inputType {
+    .inputType.outlinebtn {
       margin-left: 0.2rem;
+      margin-right: 0.5rem;
       border-radius: 1rem;
       font-weight: 600;
       cursor: pointer;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
     }
   }
 }
